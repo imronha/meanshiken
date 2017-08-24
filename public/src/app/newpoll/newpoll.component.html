@@ -1,0 +1,69 @@
+<div>
+	<nav>
+		<a [routerLink]="['/dashboard']">Home</a>
+		<a [routerLink]="['']">Logout</a>
+	</nav>
+	<h1>Create New Poll</h1>
+    {{ poll.user.name}}
+	<form #form='ngForm'>
+		<p>
+			Question:
+			<textarea
+			name="question"
+			required
+			minlength="8"
+			[(ngModel)]="poll.question"
+			#question='ngModel'
+			></textarea>
+			<span *ngIf="question.errors && question.dirty">Needs to be 8 characters long</span>
+		</p>
+		<p>
+		    Option 1:
+            <input
+            type="text"
+            name="option1"
+            required
+            minlength ="1"
+            [(ngModel)]="poll.option1.text"
+            #option1.text='ngModel'
+            >
+		</p>
+        <p>
+            Option 2:
+            <input
+            type="text"
+            name="option2"
+            required
+            minlength ="1"
+            [(ngModel)]="poll.option2.text"
+            #option2.text='ngModel'
+            >
+        </p>
+        <p>
+            Option 3:
+            <input
+            type="text"
+            name="option3"
+            required
+            minlength ="1"
+            [(ngModel)]="poll.option3.text"
+            #option3.text='ngModel'
+            >
+        </p>
+        <p>
+            Option 4:
+            <input
+            type="text"
+            name="option4"
+            required
+            minlength ="1"
+            [(ngModel)]="poll.option4.text"
+            #option4.text='ngModel'
+            >
+        </p>
+		<p>
+			<input [routerLink]="['/dashboard']" type="submit" value="Cancel">
+			<input [routerLink]="['/dashboard']" (click)="onSubmit()" [disabled]="!form.valid" type="submit" value="Submit">
+		</p>
+	</form>
+</div>

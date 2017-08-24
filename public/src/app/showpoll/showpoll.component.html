@@ -1,0 +1,41 @@
+<div>
+	<nav>
+		<a [routerLink]="['/dashboard']">Home</a> |
+		<a [routerLink]="['']">Logout</a>
+	</nav>
+	<!-- <h1>{{poll.question}}</h1> -->
+	<div>
+		<p>Option 1 : {{poll.option1.text}}</p>
+		<p>Current Number of Votes: {{poll.option1.votes}}
+		<input
+		type="submit"
+		value="Vote!"
+		(click)="voteOne(poll._id)"
+		>
+		<hr>
+        <p>Option 2 : {{poll.option2.text}}</p>
+        <p>Current Number of Votes: {{poll.option2.votes}}
+        <input
+        type="submit"
+        value="Vote!"
+        (click)="voteTwo(poll._id)"
+        >
+		<hr>
+        <p>Option 3 : {{poll.option3.text}}</p>
+        <p>Current Number of Votes: {{poll.option3.votes}}
+        <input
+        type="submit"
+        value="Vote!"
+        (click)="voteThree(poll._id)"
+        >
+		<hr>
+        <p>Option 4 : {{poll.option4.text}}</p>
+        <p>Current Number of Votes: {{poll.option4.votes}}
+        <input
+        type="submit"
+        value="Vote!"
+        (click)="voteFour(poll._id)"
+        >
+		<hr>
+	</div>
+</div>
